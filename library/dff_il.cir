@@ -1,0 +1,41 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : Set-Reset flipflop
+* Notes       :
+*  - Taken from Superconducting-Temporal-Logic 
+*    https://github.com/UCSBarchlab/Superconducting-Temporal-Logic.git
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt dff_il IN OUT CLK VBIAS
+
+B0 7 8 15 jjr ics=150uA
+RS0 7 8 4.6
+B1 10 9 16 jjr ics=175uA
+RS1 10 9 3.9
+B2 9 12 17 jjr ics=200uA
+RS2 9 12 3.4
+B3 8 13 18 jjr ics=250uA
+RS3 8 13 2.7
+B4 11 14 19 jjr ics=200uA
+RS4 11 14 3.4
+
+LP0 12 0 0.22pH
+LP1 13 0 0.50pH
+LP2 14 0 0.26pH
+
+LT0 CLK 7 2.31pH
+LT1 IN 10 2.50pH
+LT2 9 5 1.59pH
+LT3 5 8 5.48pH
+LT4 8 6 2.62pH
+LT5 6 11 1.24pH
+LT6 11 OUT 2.02pH
+
+R0 VBIAS 5 43
+R1 VBIAS 6 74
+
+.ends dff_il
+

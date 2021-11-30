@@ -1,0 +1,57 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : Toggle flipflop single output
+* Notes       :
+*  - Taken from Superconducting-Temporal-Logic 
+*    https://github.com/UCSBarchlab/Superconducting-Temporal-Logic.git
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt tff_il IN OUT VBIAS
+
+B0 10 9 23 jjr ics=200uA
+RS0 10 9 3.4
+B1 9 11 24 jjr ics=300uA
+RS1 9 11 2.3
+B2 12 14 25 jjr ics=250uA
+RS2 12 14 2.7
+B3 13 15 26 jjr ics=250uA
+RS3 13 15 2.7
+B4 16 17 27 jjr ics=250uA
+RS4 16 17 2.7
+B5 18 17 28 jjr ics=150uA
+RS5 18 17 4.6
+B6 19 21 29 jjr ics=200uA
+RS6 19 21 3.4
+B7 20 22 30 jjr ics=250uA
+RS7 20 22 2.7
+
+L0 4 7 4.52pH
+
+LP0 9 4 1.05pH
+LP1 11 0 0.17pH
+LP2 12 6 1.37pH
+LP3 13 5 1.00pH
+LP4 0 16 0.11pH
+LP5 14 0 0.20pH
+LP6 15 0 0.15pH
+LP7 17 7 1.16pH
+LP8 7 19 2.38pH
+LP9 8 20 1.26pH
+LP10 21 0 0.20pH
+LP11 22 0 0.20pH
+
+LT0 10 5 1.50pH
+LT1 IN 12 1.97pH
+LT2 6 13 1.87pH
+LT3 5 18 1.44pH
+LT4 19 8 3.09pH
+LT5 20 OUT 1.26pH
+
+R0 VBIAS 6 28
+R1 4 VBIAS 32
+R2 VBIAS 8 38
+
+.ends tff_il

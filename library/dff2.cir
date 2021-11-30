@@ -1,0 +1,59 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : Feb/16/2021
+* Description : Set-Reset flipflop with two outputs
+* Notes       :
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt dff2 D C1 C2 Q1 Q2 VBIAS
+
+
+B1 1 0 100 jjr ics=200uA
+RS1 1 9 3.4
+B2 2 0 111 jjr ics=250uA
+RS2 2 0 2.7
+*B3 4 0 101 jjr ics=200uA
+*RS3 4 0 3.4
+*B4 9 0 102 jjr ics=200uA
+*RS4 9 0 3.4
+B5 6 3 103 jjr ics=200uA
+RS5 6 3 3.4
+B6 3 11 104 jjr ics=200uA
+RS6 3 11 3.4
+B7 7 0 105 jjr ics=250uA
+RS7 7 0 2.7
+B8 8 0 106 jjr ics=200uA
+RS8 8 0 3.4
+B9 12 0 107 jjr ics=250uA
+RS9 12 0 2.7
+B10 13 0 108 jjr ics=200uA
+RS10 13 0 3.4
+B11 5 6 109 jjr ics=175uA
+RS11 5 6 3.9
+B12 10 11 110 jjr ics=175uA
+RS12 10 11 3.9
+
+*B13 1 1a 112 jjr ics=175uA
+*RS13 1 1a 3.9
+
+L1 D  1 2.50pH
+L2 1  2 1.59pH
+L3 2  3 5.48pH
+L4 C1 4 2.50pH 
+L5 4  5 0.50pH
+L6 6  7 0.50pH
+L7 7  8 2.62pH
+L8 8 Q1 3.26pH
+L9 C2 9 2.50pH
+L10 9 10 0.50pH
+L11 11 12 0.50pH
+L12 12 13 2.62pH
+L13 13 Q2 3.26pH
+
+R0 VBIAS 8  40
+R1 VBIAS 2  28
+R2 VBIAS 13 40
+
+.ends dff_il

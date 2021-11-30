@@ -1,0 +1,30 @@
+* **********************************************************************
+* Author      : LPGG
+* Date        : Feb/19/2021
+* Description : Balancer (2 inputs, 2 outputs)
+* Notes       :
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+.subckt balancer A B Y1 Y2 VBIAS
+
+X0 A A_0 A_1 VBIAS split
+X1 B B_0 B_1 VBIAS split
+
+X2 A_0 S1 R2 VBIAS split 
+X3 B_0 S2 R1 VBIAS split 
+
+X4 S1 S2 R1 R2 Q1 Q1b Q2 Q2b VBIAS bff
+
+X5 Q1 Q1b clk1 VBIAS merge
+X6 Q2 Q2b clk2 VBIAS merge
+
+X7 A_1 clk1_0 clk2_0 y1a y2a VBIAS dff2
+X8 B_1 clk2_1 clk1_1 y1b y2b VBIAS dff2
+
+X9 clk1 clk1_0 clk1_1 VBIAS split
+X10 clk2 clk2_0 clk2_1 VBIAS split
+
+X11 y1a y1b Y1 VBIAS merge
+X12 y2a y2b Y2 VBIAS merge
+
+.ends

@@ -1,0 +1,59 @@
+#! Wrapper
+**************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : Simple wrapper
+* Notes       :
+*   - Use this file to launch an FIR simulation
+**************************************************
+
+******************************
+* Include Files
+******************************
+
+*- Building Cells
+.include ../library/jtl.cir
+.include ../library/inv.cir
+.include ../library/split.cir
+.include ../library/merge.cir
+.include ../library/dff_il.cir
+.include ../library/tff_il.cir
+.include ../library/tff2.cir
+.include ../library/larr.cir
+.include ../library/ndro_il.cir 
+.include ../library/balancer.cir
+.include ../library/dff2.cir
+.include ../library/bff.cir
+
+*- Auxiliary Circuits
+.include ../library/dcsfq.cir
+
+*- My Primitives
+.include ../library/merge_arm.cir
+
+*- Circuit to test
+.include ./stimulus.cir
+.include ./fir_taps4_coeffEnoB7.cir
+
+******************************
+* Specify simulation options
+******************************
+.options ysep
+
+*****************************
+* Define models. TBD What else?
+******************************
+
+* JJ model definition
+.model jjr jj(level=2)
+
+*****************************
+* Plot Signals
+*****************************
+
+.control
+   run
+   print nY11 > file.txt
+   exit
+.endc
+

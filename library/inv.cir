@@ -1,0 +1,63 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : Inverter element
+* Notes       :
+*  - Taken from Superconducting-Temporal-Logic 
+*    https://github.com/UCSBarchlab/Superconducting-Temporal-Logic.git
+*  - Clock: 26 FIXME
+*  - Data : 27 FIXME
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt inv 26 27 OUT VBIAS
+B0 10 11 29 jjr ics=140uA
+RS0 10 11 4.9
+B1 9 15 30 jjr ics=250uA
+RS1 9 15 3.7
+B2 10 16 31 jjr ics=310uA
+RS2 10 16 2.2
+B3 12 17 32 jjr ics=174uA
+RS3 12 17 3.9
+B4 13 18 33 jjr ics=294uA
+RS4 13 18 2.3
+B5 14 19 34 jjr ics=355uA
+RS5 14 19 1.9
+B6 21 24 35 jjr ics=294uA
+RS6 21 24 2.3
+B7 23 25 36 jjr ics=264uA
+RS7 23 25 2.6
+
+L0 26 9 2pH
+L1 9 6 1.03pH
+L2 6 10 .97pH
+L3 11 12 .97pH
+L4 12 7 .33pH
+L5 7 13 5.88pH
+L6 8 13 1.3pH
+L7 14 8 1.02pH
+L8 27 14 .79pH
+L9 17 20 1.04pH
+L10 20 18 .57pH
+L11 20 21 .875pH
+L12 21 22 1.7pH
+L13 22 23 1.11pH
+L14 23 OUT 2.37pH
+
+LP0 3 6 .35pH
+LP1 4 7 .57pH
+LP2 5 8 .33pH
+LP3 15 0 .03pH
+LP4 16 0 .09pH
+LP5 19 0 .02pH
+LP6 2 22 .5pH
+LP7 24 0 .145pH
+LP8 25 0 .03pH
+
+R0 VBIAS 3 40
+R1 VBIAS 4 42
+R2 VBIAS 5 74
+R3 VBIAS 2 65
+.ends inv
+

@@ -1,0 +1,86 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : NDRO circuit
+* Notes       :
+*  - Inspired in paper
+*    Likharev, Konstantin K., and Vasilii K. Semenov. 
+*     "RSFQ logic/memory family: A new Josephson-junction technology for
+*      sub-terahertz-clock-frequency digital systems." IEEE transactions 
+*      on applied superconductivity 1.1 (1991): 3-28.
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt ndro_il IN OUT CLK RD OUT_RD VBIAS
+
+
+B0 7 8 15 jjr ics=150uA
+RS0 7 8 4.6
+B1 10 9 16 jjr ics=175uA
+RS1 10 9 3.9
+B2 9 12 17 jjr ics=200uA
+RS2 9 12 3.4
+B3 8 13 18 jjr ics=250uA
+RS3 8 13 2.7
+B4 11 14 19 jjr ics=200uA
+RS4 11 14 3.4
+
+LP0 12 0 0.22pH
+LP1 13 0 0.50pH
+LP2 14 0 0.26pH
+
+LT0 CLK 7 2.31pH
+LT1 IN 10 2.50pH
+
+*------------
+LT2 9 5 1.59pH
+LT2a 8a LR 0.8pH
+LT2b LR 8 0.8pH
+*------------
+
+LT3 5 8a 5.48pH
+
+LT4 8 6 2.62pH
+LT5 6 11 1.24pH
+LT6 11 OUT 2.02pH
+
+R0 VBIAS 5 50
+R1 VBIAS 6 76
+
+**---------------------
+
+B7 LR_0 30 102 jjr ics=175uA
+RS7 LR_0 30 3.9
+
+B6 30 31 101 jjr ics=200uA
+RS6 30 31 3.4
+
+B5 31 32 100 jjr ics=250uA
+RS5 31 32 2.7
+
+B8 33 31 100 jjr ics=175uA
+RS8 33 31 3.9
+
+LT7 RD 33 2.02pH
+LT9 LR LR_0 0.2pH
+
+LP3 32 0 0.22pH
+
+**---------------------
+*Output interface
+
+LT10 31 34 2.6pH
+LT11 34 35 1.24pH
+LT8  35 OUT_RD 2.02pH
+
+B9 34 36 100 jjr ics=200uA
+RS9 34 36 3.4
+
+LP4 36 0 0.22pH
+
+R2 VBIAS 30 46
+R3 VBIAS 34 47
+
+.ends ndro_il
+

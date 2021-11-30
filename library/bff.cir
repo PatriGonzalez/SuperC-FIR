@@ -1,0 +1,88 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : Feb/16/2021
+* Description : B flipflop (4 inputs, 4 outputs)
+* Notes       :
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt bff S1 S2 R1 R2 Q1 Q1b Q2 Q2b VBIAS
+
+B1 2 0 100 jjr ics=200uA
+RS1 2 0 3.4
+B2 1 2 101 jjr ics=175uA
+RS2 1 2 3.9
+B3 2 3 102 jjr ics=300uA
+RS3 2 3 2.3
+B4  5 0 103 jjr ics=200uA
+RS4 5 0 3.4
+B5 5 6 104 jjr ics=150uA
+RS5 5 6 2.3
+B6 4 5 105 jjr ics=300uA
+RS6 4 5 2.3
+B7 7 0 106 jjr ics=200uA
+RS7 7 0 3.4
+B8 7 8 107 jjr ics=175uA
+RS8 7 8 3.9
+B9 7 3 108 jjr ics=300uA
+RS9 7 3 2.3
+B10 10 0 109 jjr ics=200uA
+RS10 10 0 3.4
+B11 9 10 110 jjr ics=175uA
+RS11 9 10 3.9
+B12 10 4 111 jjr ics=300uA
+RS12 10 4 2.3
+
+*B1 2 0 100 jjr ics=220uA
+*RS1 2 0 3.1
+*B2 1 2 101 jjr ics=300uA
+*RS2 1 2 2.3
+*B3 2 3 102 jjr ics=250uA
+*RS3 2 3 2.7
+*B4  5 0 103 jjr ics=220uA
+*RS4 5 0 3.1
+*B5 5 6 104 jjr ics=300uA
+*RS5 5 6 2.3
+*B6 4 5 105 jjr ics=250uA
+*RS6 4 5 2.7
+*B7 7 0 106 jjr ics=220uA
+*RS7 7 0 3.1
+*B8 7 8 107 jjr ics=300uA
+*RS8 7 8 2.3
+*B9 7 3 108 jjr ics=250uA
+*RS9 7 3 2.7
+*B10 10 0 109 jjr ics=220uA
+*RS10 10 0 3.1
+*B11 9 10 110 jjr ics=300uA
+*RS11 9 10 2.3
+*B12 10 4 111 jjr ics=250uA
+*RS12 10 4 2.7
+
+L1 3  4   4pH
+L2 S1a 1   1.5pH
+L3 R1a 6   1.5pH
+L4 2  Q1b_0 2.5pH
+L5 5  Q1_0  2.5pH
+L6 7  Q2b_0 2.5pH
+L7 10 Q2_0  2.5pH
+L8 S2a 8   1.5pH
+L9 R2a 9   1.5pH
+
+R0 VBIAS 3 20
+*R1 VBIAS 4 20
+
+
+X0 Q1_0 Q1 VBIAS jtl 
+X1 Q1b_0 Q1b VBIAS jtl 
+X2 Q2_0 Q2 VBIAS jtl 
+X3 Q2b_0 Q2b VBIAS jtl 
+
+X4 S1 S1a VBIAS jtl 
+X5 R1 R1a VBIAS jtl 
+X6 S2 S2a VBIAS jtl 
+X7 R2 R2a VBIAS jtl 
+
+
+.ends bff
+

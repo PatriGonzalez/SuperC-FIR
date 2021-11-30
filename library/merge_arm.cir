@@ -1,0 +1,28 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : One of the arms from the merge cell
+* Notes       :
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt merge_arm IN OUT VBIAS
+
+B0 6 7 16 jjr ics=250uA
+RS0 6 7 2.7
+B1 8 10 17 jjr ics=220uA
+RS1 8 10 3.1
+
+L0 IN 7 5pH
+
+LP0 0 6 .03pH
+LP1 7 8 .66pH
+
+LP3 10 5 .2pH
+LP7 5 OUT .2pH
+LP2 9 5 .13pH
+
+R0 VBIAS 9 45
+
+.ends

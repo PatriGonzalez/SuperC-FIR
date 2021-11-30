@@ -1,0 +1,36 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : Splitter element
+* Notes       :
+*  - Taken from Superconducting-Temporal-Logic 
+*    https://github.com/UCSBarchlab/Superconducting-Temporal-Logic.git
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt split IN OUT1 OUT2 VBIAS
+
+B0 2 0 100 jjr ics=355uA
+R0 2 0 1.9
+B1 7 0 101 jjr ics=250uA
+R2 7 0 2.7
+B2 9 0 102 jjr ics=250uA
+R3 9 0 2.7
+
+L0 IN 1 0.8p
+L1 1 3 1.2p
+L2 3 5 0.05p
+L3 5 6 1.6p
+L4 6 OUT1 1.98p
+L5 5 8 1.6p
+L6 8 OUT2 1.98p
+
+LP0 1 2 0.05p
+LP1 4 3 0.13p
+LP2 6 7 0.05p
+LP3 8 9 0.05p
+
+R1 VBIAS 4 16.7
+
+.ends split

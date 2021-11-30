@@ -1,0 +1,43 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : Last-Arrival element
+* Notes       :
+*  - Taken from Superconducting-Temporal-Logic 
+*    https://github.com/UCSBarchlab/Superconducting-Temporal-Logic.git
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt larr IN1 IN2 OUT VBIAS
+B0 8 0 13 jjr ics=360uA
+RS0 8 0 1.9
+B1 10 0 14 jjr ics=190uA
+RS1 10 0 3.6
+B2 9 0 15 jjr ics=260uA
+RS2 9 0 2.6
+B3 6 0 16 jjr ics=360uA
+RS3 6 0 1.9
+B4 12 0 17 jjr ics=190uA
+RS4 12 0 3.6
+B5 11 0 18 jjr ics=260uA
+RS5 11 0 2.6
+
+L0 9 5 1.42pH
+L1 11 7 1.42pH
+
+LT0 OUT 8 2.32pH
+LT1 IN1 10 2.13pH
+LT2 10 9 3.29pH
+LT3 5 6 3.29pH
+LT4 8 6 3.0pH
+LT5 IN2 12 2.13pH
+LT6 12 11 3.29pH
+LT7 7 6 3.29pH
+
+R0 VBIAS OUT 57
+R1 VBIAS IN1 57
+R2 VBIAS 5 56
+R3 VBIAS IN2 57
+R4 VBIAS 7 56
+.ends larr

@@ -1,0 +1,40 @@
+
+* **********************************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : Merge element
+* Notes       :
+*  - Taken from Superconducting-Temporal-Logic 
+*    https://github.com/UCSBarchlab/Superconducting-Temporal-Logic.git
+*  - The jjr element is defined at a higher level
+* **********************************************************************
+
+.subckt merge IN1 IN2 OUT VBIAS
+
+B0 6 7 16 jjr ics=250uA
+RS0 6 7 2.7
+B1 8 10 17 jjr ics=220uA
+RS1 8 10 3.1
+B2 10 12 18 jjr ics=220uA
+RS2 10 12 3.1
+B3 11 13 19 jjr ics=250uA
+RS3 11 13 2.7
+B4 14 15 20 jjr ics=250uA
+RS4 14 15 2.7
+
+L0 IN1 7 5pH
+L1 5 11 2.6pH
+L2 11 OUT 2pH
+L3 IN2 14 5pH
+
+LP0 0 6 .03pH
+LP1 7 8 .66pH
+LP2 9 5 .13pH
+LP3 10 5 .2pH
+LP4 12 14 .66pH
+LP5 13 0 .03pH
+LP6 15 0 .03pH
+
+R0 VBIAS 9 20
+.ends merge
+
