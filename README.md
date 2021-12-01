@@ -21,7 +21,7 @@ We repeat this process for a number of iterations that can be set.
 
 # Use example
 
-After installing the software dependencies, download the github repository and run launch_sim.sh in a terminal. 
+After installing the software dependencies, download the github repository and run `launch_sim.sh` in a terminal. 
 
 # Expected results
 
