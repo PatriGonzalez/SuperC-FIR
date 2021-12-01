@@ -39,9 +39,11 @@
 * Specify simulation options
 ******************************
 .options ysep
+.tran 0.5p 17662.24p
+.options maxdata=3500000
 
 *****************************
-* Define models. TBD What else?
+* Define models.
 ******************************
 
 * JJ model definition

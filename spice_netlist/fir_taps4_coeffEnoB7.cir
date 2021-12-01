@@ -1,10 +1,12 @@
 
-******************************
-* Specify simulation options
-******************************
-.tran 0.5p 17662.24p
-*.tran 0.5p 500p
-.options maxdata=3500000
+**************************************************
+* Author      : LPGG
+* Date        : 09/10/2020
+* Description : netlist for Finite Impulse 
+*               Response (FIR) filter
+* Notes       :
+*    - Output: nY11
+**************************************************
 
 ******************************
 * Specity Inputs
@@ -169,8 +171,5 @@ X4_sfq 8 CLK VCC dcsfq
   Xf89 nY00 nY02d nY10 nY11a VCC balancer
 
   Xf90 nY11a nY11 VCC jtl  
-
   X1004 nY02 nY02d VCC jtl
-  *X1005 nY02d_0 nY02d VCC jtl
-  *X1006 nY02d_1 nY02d VCC jtl
 

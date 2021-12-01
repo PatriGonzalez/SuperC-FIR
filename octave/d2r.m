@@ -11,9 +11,7 @@
 %     - Notice that this function returns the time of pulse occurrence
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%FIXME: What does this function do?
-%- Maybe it is just digitizing
-
+%- FIXME: This function is not necessary. We can do this more efficiently.
 function Y=d2r(a,n)
   Y1=d2b(a,n);            %- Convert decimal to binary
   Y=bin2dec(int2str(Y1)); %- Then bin 2 decimal 

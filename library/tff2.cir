@@ -4,7 +4,7 @@
 * Date        : 09/10/2020
 * Description : 2 outputs Toggle flipflop
 * Notes       :
-*  - Designed by Meriam Bautista (mgbautista@lbl.gov)
+*  - Implemented by Meriam Bautista (mgbautista@lbl.gov)
 *  - The jjr element is defined at a higher level
 * **********************************************************************
 

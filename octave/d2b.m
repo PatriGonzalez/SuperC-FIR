@@ -1,3 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author      : LPGG
+% Date        : 01/12/2020
+% Description : Converts decimal to binary
+% Notes       :
+%     - Inputs:
+%          n: Number of bits
+%          a: Decimal number to convert
+%     - Outputs:
+%          Y: Vector in binary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%- FIXME: This function is not necessary. We can do this more efficiently.
+
 function Y=d2b(a,n)
   
   i=0;

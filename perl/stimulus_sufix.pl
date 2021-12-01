@@ -1,4 +1,12 @@
 
+##############################################
+## Author      : LPGG 
+## Date        : Feb-03-2021
+## Description : Some help building a superC
+##               FIR
+## Generating coefficients array (pulse) 
+## and inputs in RL
+#############################################
 
 #- Some very basic, insuficient sanity checks
 if ($#coeffArray < $taps-1){ die "Missing coefficients\n"};
