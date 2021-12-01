@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5746714.svg)](https://doi.org/10.5281/zenodo.5746714)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5746714.svg)](https://doi.org/10.5281/zenodo.5746713)
 
 # SuperC-FIR
 Netlist for Finite Impulse Response (FIR) filter using temporal and pulse-stream encoding
