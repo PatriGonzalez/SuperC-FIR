@@ -1,7 +1,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5746714.svg)](https://doi.org/10.5281/zenodo.5746714)
 
 # SuperC-FIR
-Temporal and SFQ Pulse Streams Encoding for Area-Efficient Superconducting Accelerators
+Netlist for Finite Impulse Response (FIR) filter using temporal and pulse-stream encoding
 
 # Description
 
