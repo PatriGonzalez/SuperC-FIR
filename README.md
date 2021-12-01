@@ -5,7 +5,12 @@ Netlist for Finite Impulse Response (FIR) filter using temporal and pulse-stream
 
 # Description
 
-A bash script executes three steps: (i) a stimulus generator in perl and octave to create the stimulus file with inputs and filter coefficients randomly generated for a Multiply-Accumulation (MAC) operation. (ii) Then it launches a WRSPICE simulation of the FIR filter. (iii) Finally we use octave to post-process the WRSPICE simulation results. 
+A bash script executes three steps: 
+* Stimulus generation: Using octave we randomly generate inputs and coefficients for the MAC unit and convert it to puls-streams and RL. Then in perl, we use this numbers to generate the stimulus to execute one Multiply-Accumulation (MAC) operation. 
+* Circuit simulation: using WRSPICE we launch a simulation to obtain the result of a single MAC operation.
+* Post-processing: We use octave to identify and count the pulses from the output of WRSPICE simulation result.
+
+We repeat this process for a number of iterations that can be set. 
 
 # Software dependencies
 
@@ -20,14 +25,12 @@ After installing the software dependencies, download the github repository and r
 
 # Expected results
 
-* The inputs, coefficients and expected result in file \textit{stimulus.txt}.
-* The MAC result from the WRSPICE simulation in \textit{result.txt}
+* The inputs, coefficients and expected result in file stimulus.txt
+* The MAC result from the WRSPICE simulation in result.txt
 * An average error obtained from the MAC unit. i.e.
-    
 //////////////////////////////////////////////////////////////////////
 The average error in 20 MAC operations is 3.35
 //////////////////////////////////////////////////////////////////////
-
 The expected error should not be larger than 5.
 
 # Experiment customization
