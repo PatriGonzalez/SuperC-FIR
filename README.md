@@ -28,9 +28,9 @@ After installing the software dependencies, download the github repository and r
 * The inputs, coefficients and expected result in file `stimulus.txt`
 * The MAC result from the WRSPICE simulation in `result.txt`
 * An average error obtained from the MAC unit. i.e.
-`//////////////////////////////////////////////////////////////////////
+```//////////////////////////////////////////////////////////////////////
 The average error in 20 MAC operations is 3.35
-//////////////////////////////////////////////////////////////////////`
+//////////////////////////////////////////////////////////////////////```
 The expected error should not be larger than 5.
 
 # Experiment customization
