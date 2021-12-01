@@ -25,14 +25,14 @@ After installing the software dependencies, download the github repository and r
 
 # Expected results
 
-* The inputs, coefficients and expected result in file stimulus.txt
-* The MAC result from the WRSPICE simulation in result.txt
+* The inputs, coefficients and expected result in file `stimulus.txt`
+* The MAC result from the WRSPICE simulation in `result.txt`
 * An average error obtained from the MAC unit. i.e.
-//////////////////////////////////////////////////////////////////////
+`//////////////////////////////////////////////////////////////////////
 The average error in 20 MAC operations is 3.35
-//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////`
 The expected error should not be larger than 5.
 
 # Experiment customization
-The number of iterations can be set by opening the \textit{launch\_sim.sh} and modify the end of the \textit{for loop}. That is, \textit{for i in {1..<ITERATION>}}.
+The number of iterations can be set by opening the `launch_sim.sh` and modify the end of the for loop. That is, `for i in {1..<ITERATION>`.
 
